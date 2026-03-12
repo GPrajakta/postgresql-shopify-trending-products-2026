@@ -31,8 +31,8 @@ The dataset contains product level trend information including:
 5. Revenue contribution by category
 
 ## Key Insights
-- Electronics category generated the highest revenue
-- Products priced between $50–$100 sold the most units
+- Fitness category generated the highest revenue
+- Products priced between $3.0-$4 sold the most units
 - Top 10 products contribute a significant portion of total revenue
 
 ## Project Structure
