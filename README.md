@@ -40,9 +40,9 @@ dataset/
 shopify_products.csv
 
 sql_queries/
-01_product_trends.sql
-02_category_analysis.sql
-03_price_analysis.sql
+- 01_product_trends.sql
+- 02_category_analysis.sql
+- 03_price_analysis.sql
 
 results/
 query_output.png
