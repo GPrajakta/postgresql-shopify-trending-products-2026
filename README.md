@@ -46,3 +46,8 @@ sql_queries/
 
 results/
 query_output.png
+
+Business Questions
+- Which products have the highest trend score?
+- Which categories generate the most revenue?
+- Which price range sells the most units?
