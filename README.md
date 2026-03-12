@@ -6,7 +6,7 @@ Tools Used
 - SQL
 
 Dataset
-Shopify orders dataset (CSV)
+- Shopify orders dataset (CSV)
 
 Analysis Performed
 - Top trending products
