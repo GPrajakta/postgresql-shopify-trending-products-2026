@@ -22,4 +22,11 @@ FROM shopify_products
 WHERE trend_score > 8
 AND estimated_revenue_in_2025_usd < 50000;
 
---
+-- TOP products in each category---
+SELECT category,
+product_name,
+estimated_revenue_in_2025_usd,
+RANK() OVER (PARTITION BY category ORDER BY estimated_revenue_in_2025_usd DESC) AS rank_in_category
+FROM shopify_products;
+
+-- Top 3 Products per Category--
