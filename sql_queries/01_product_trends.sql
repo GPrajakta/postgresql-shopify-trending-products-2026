@@ -30,3 +30,26 @@ RANK() OVER (PARTITION BY category ORDER BY estimated_revenue_in_2025_usd DESC) 
 FROM shopify_products;
 
 -- Top 3 Products per Category--
+
+SELECT * FROM 
+(
+  SELECT category,product_name,Estimated_Revenue_in_2025_USD,
+  RANK() OVER (PARTITION BY category ORDER BY estimated_revenue_in_2025_usd DESC) AS rank_in
+  FROM shopify_trending_products_2026
+  )t
+WHERE rank_in <=3;
+
+--- Rank all products by unit price from most to least expensive ---
+
+SELECT product_name,category,price_range_usd,
+RANK() OVER (order by price_range_usd desc) AS price_rank
+FROM shopify_trending_products_2026;
+
+---  Find the top 2 most expensive products in each category --
+select * from 
+(
+	select product_name,category,price_range_usd,
+	row_number() OVER (partition by category order by price_range_usd DESC) AS product_rank
+	FROM shopify_trending_products_2026
+) t
+where product_rank <= 2;
