@@ -53,3 +53,9 @@ select * from
 	FROM shopify_trending_products_2026
 ) t
 where product_rank <= 2;
+
+--- Identify Premium Products ----
+SELECT product_name, 
+Estimated_Revenue_in_2025_USD / Estimated_Total_Units_Sold_in_2025 AS price_per_unit
+FROM shopify_trending_products_2026
+order by price_per_unit desc;
