@@ -59,3 +59,45 @@ SELECT product_name,
 Estimated_Revenue_in_2025_USD / Estimated_Total_Units_Sold_in_2025 AS price_per_unit
 FROM shopify_trending_products_2026
 order by price_per_unit desc;
+
+--- Revenue Contribution by Product (Cumulative %) ---
+/*---USING SUBQUERY-----*/
+SELECT Product_Name,
+revenue,
+ROUND(
+sum(revenue) OVER (order by revenue DESC) 
+/ SUM(revenue) OVER() * 100 ,2) as cumulative_percentage
+FROM
+(
+	SELECT product_name,
+	SUM(estimated_revenue_in_2025_usd) AS revenue
+	FROM shopify_trending_products_2026
+	GROUP BY Product_Name
+) AS t
+order BY revenue desc;
+
+/*---USING CTE ---*/
+WITH revenue_data AS (
+    SELECT 
+        product_name,
+        SUM(estimated_revenue_in_2025_usd) AS revenue
+    FROM shopify_trending_products_2026
+    GROUP BY product_name
+),
+
+calc AS (
+    SELECT 
+        product_name,
+        revenue,
+        SUM(revenue) OVER (ORDER BY revenue DESC) AS cumulative_sum,
+        SUM(revenue) OVER () AS total_sum
+    FROM revenue_data
+)
+
+SELECT 
+    product_name,
+    revenue,
+    ROUND(cumulative_sum / total_sum * 100, 2) AS cumulative_percentage
+FROM calc
+ORDER BY revenue DESC;
+
