@@ -62,4 +62,18 @@ Estimated_Revenue_in_2025_USD,
 RANK() OVER (partition by category order by Estimated_Revenue_in_2025_USD DESC) AS rank_in_category
 from shopify_trending_products_2026;
 
+--- Category vs Subcategory Analysis ---
+select category,subcategory,
+sum(Estimated_Revenue_in_2025_USD) AS revenue
+FROM shopify_trending_products_2026
+group by Category, Subcategory
+order by Category,revenue DESC;
+
+--- Trend Score vs Revenue Comparison ---
+SELECT product_name,
+trend_score,
+estimated_revenue_in_2025_usd
+FROM shopify_trending_products_2026
+ORDER BY trend_score DESC;
+
 
