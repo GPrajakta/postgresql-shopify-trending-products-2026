@@ -109,3 +109,11 @@ SELECT price_range_usd, COUNT(*) AS total_products
 FROM shopify_trending_products_2026 
 GROUP BY price_range_usd ORDER BY total_products DESC;
 
+--- Find which platforms influence trends most(which platforms influence trends most) ----
+
+SELECT trend_source,count(*) AS total_products
+FROM shopify_trending_products_2026
+group by Trend_Source
+order by total_products desc;
+
+
