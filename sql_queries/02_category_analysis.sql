@@ -55,5 +55,11 @@ FROM
 WHERE cumulative_percent <= 80
 ORDER BY revenue DESC;
 
+--- Rank Products Within Each Category ---
+select category,
+Product_name,
+Estimated_Revenue_in_2025_USD,
+RANK() OVER (partition by category order by Estimated_Revenue_in_2025_USD DESC) AS rank_in_category
+from shopify_trending_products_2026;
 
 
