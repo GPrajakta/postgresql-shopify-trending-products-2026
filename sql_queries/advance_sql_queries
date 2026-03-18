@@ -18,3 +18,27 @@ revenue,
 ROUND(cumulative_revenue / total_revenue * 100 ,2) AS cumulative_percent
 FROM cumulative
 WHERE cumulative_revenue / total_revenue <= 0.8;
+
+--- Z-Score Analysis (Detect Outliers) ---
+
+SELECT product_name,
+Estimated_Revenue_in_2025_USD,
+(
+	ROUND((Estimated_Revenue_in_2025_USD - avg(Estimated_Revenue_in_2025_USD) OVER()) 
+    / stddev(Estimated_Revenue_in_2025_USD) OVER() ,2)
+) AS z_score
+FROM shopify_trending_products_2026
+order by z_score DESC;
+
+/* Bucket Products by Performance */
+
+SELECT product_name,
+Estimated_Revenue_in_2025_USD,
+CASE
+	WHEN Estimated_Revenue_in_2025_USD > 100000 THEN 'High Performance'
+    WHEN Estimated_Revenue_in_2025_USD > 50000 THEN 'Medium Performer'
+    ELSE
+    'Low Performer'
+END AS performace_category
+FROM shopify_trending_products_2026;
+
