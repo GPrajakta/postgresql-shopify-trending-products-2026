@@ -45,7 +45,8 @@ SELECT product_name,category,price_range_usd,
 RANK() OVER (order by price_range_usd desc) AS price_rank
 FROM shopify_trending_products_2026;
 
----  Find the top 2 most expensive products in each category --
+---  Find the top 2 most expensive products in each category ---
+
 select * from 
 (
 	select product_name,category,price_range_usd,
@@ -55,6 +56,7 @@ select * from
 where product_rank <= 2;
 
 --- Identify Premium Products ----
+
 SELECT product_name, 
 Estimated_Revenue_in_2025_USD / Estimated_Total_Units_Sold_in_2025 AS price_per_unit
 FROM shopify_trending_products_2026
@@ -100,4 +102,10 @@ SELECT
     ROUND(cumulative_sum / total_sum * 100, 2) AS cumulative_percentage
 FROM calc
 ORDER BY revenue DESC;
+
+--- Count Products in Each Price Range ----
+
+SELECT price_range_usd, COUNT(*) AS total_products 
+FROM shopify_trending_products_2026 
+GROUP BY price_range_usd ORDER BY total_products DESC;
 
