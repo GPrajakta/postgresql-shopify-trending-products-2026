@@ -1,0 +1,20 @@
+-- Pareto Analysis (Top 80% Revenue Products) ---
+WITH revenue_data AS(
+	select product_name,
+    sum(Estimated_Revenue_in_2025_USD) AS revenue
+    FROM shopify_trending_products_2026
+    group by Product_Name
+),
+
+cumulative AS (
+	select product_name,
+    revenue,
+    SUM(revenue) OVER (order by revenue DESC) cumulative_revenue,
+    sum(revenue) OVER () AS total_revenue
+    FROM revenue_data
+)
+SELECT product_name,
+revenue,
+ROUND(cumulative_revenue / total_revenue * 100 ,2) AS cumulative_percent
+FROM cumulative
+WHERE cumulative_revenue / total_revenue <= 0.8;
