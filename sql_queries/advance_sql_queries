@@ -42,3 +42,9 @@ CASE
 END AS performace_category
 FROM shopify_trending_products_2026;
 
+/* Category Leaders (Best Product in Each Category) */
+
+SELECT category,
+product_name, Estimated_Total_Units_Sold_in_2025,
+rank() OVER(order by Estimated_Total_Units_Sold_in_2025 DESC) AS rn
+from shopify_trending_products_2026;
