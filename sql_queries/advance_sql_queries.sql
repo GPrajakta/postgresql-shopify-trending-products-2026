@@ -80,3 +80,8 @@ SELECT
 WHERE trend_score > avg_trend_score
 AND estimated_revenue_in_2025_usd < avg_revenue;
 
+---- Correlation Insight (Trend vs Units) ----
+
+SELECT CORR(trend_score, estimated_total_units_sold_in_2025) AS correlation
+FROM shopify_trending_products_2026;
+
