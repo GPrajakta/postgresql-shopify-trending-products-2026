@@ -42,9 +42,41 @@ CASE
 END AS performace_category
 FROM shopify_trending_products_2026;
 
-/* Category Leaders (Best Product in Each Category) */
+--- Category Leaders (Best Product in Each Category) ---
 
 SELECT category,
 product_name, Estimated_Total_Units_Sold_in_2025,
 rank() OVER(order by Estimated_Total_Units_Sold_in_2025 DESC) AS rn
 from shopify_trending_products_2026;
+
+--- Revenue Efficiency (Revenue per Unit) ----
+SELECT product_name,
+ROUND(estimated_revenue_in_2025_usd 
+/ Estimated_Total_Units_Sold_in_2025,2) AS revenue_per_unit
+FROM shopify_trending_products_2026
+ORDER by revenue_per_unit DESC;
+
+--- Trend Score Bucketing ----
+SELECT product_name,trend_score,
+CASE
+	WHEN trend_score >= 90 THEN 'Highly Trending'
+	WHEN trend_score >= 30 THEN 'Moderately Trending'
+	WHEN trend_score >= 20 THEN 'Low Performer'
+END AS trend_category
+FROM shopify_trending_products_2026;
+
+--- High Trend but Low Revenue ---
+
+Select product_name,trend_score,estimated_revenue_in_2025_usd
+FROM(
+SELECT 
+        product_name,
+        trend_score,
+        estimated_revenue_in_2025_usd,
+        AVG(trend_score) OVER() AS avg_trend_score,
+        AVG(estimated_revenue_in_2025_usd) OVER() AS avg_revenue
+    	FROM shopify_trending_products_2026
+) t
+WHERE trend_score > avg_trend_score
+AND estimated_revenue_in_2025_usd < avg_revenue;
+
