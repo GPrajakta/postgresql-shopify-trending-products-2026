@@ -40,8 +40,55 @@ The dataset contains product level trend information including:
 *	Subqueries
 *	CTEs
 
-# Business Questions
-# The project answers the following business questions:
+## SQL Concepts Used
+* Basic SQL
+* SELECT
+* WHERE
+* ORDER BY
+* GROUP BY
+* HAVING
+*LIMIT
+## Intermediate SQL
+* CASE WHEN
+* Subqueries
+* Common Table Expressions (CTEs)
+* Aggregate Functions
+## Advanced SQL
+* Window Functions
+* RANK()
+* ROW_NUMBER()
+* SUM() OVER()
+* AVG() OVER()
+* STDDEV()
+* CORR()
+* Z-Score Analysis
+* Pareto Analysis
+## Example Analyses
+1. Category Revenue Contribution
+
+This analysis identifies which categories generate the highest share of revenue.
+
+2. Trend Score Segmentation
+
+Products are classified as:
+
+Highly Trending
+Moderately Trending
+Low Trending
+3. High Trend but Low Revenue Products
+
+This helps identify products with growth potential.
+
+4. Revenue Per Unit
+
+This helps identify premium products with high value.
+
+5. Correlation Between Trend Score and Revenue
+
+This analysis checks whether higher trend scores are associated with higher revenue.
+
+## Business Questions
+## The project answers the following business questions:
 1.	Which products generate the highest revenue?
 2.	Which categories contribute the most to total revenue?
 3.	Which price ranges perform best?
@@ -50,7 +97,6 @@ The dataset contains product level trend information including:
 6.	Which products generate the highest revenue per unit sold?
 7.	Is there a relationship between trend score and revenue?
 8.	Which products are above average performers?
-
 
 ## Analysis Performed
 1. Top trending products by trend score
@@ -67,16 +113,11 @@ The dataset contains product level trend information including:
 ## Project Structure
 dataset/
 shopify_products.csv
-
 sql_queries/
 - 01_product_trends.sql
 - 02_category_analysis.sql
 - 03_price_analysis.sql
+- advance_queries.sql
 
 results/
 query_output.png
-
-Business Questions
-- Which products have the highest trend score?
-- Which categories generate the most revenue?
-- Which price range sells the most units?
