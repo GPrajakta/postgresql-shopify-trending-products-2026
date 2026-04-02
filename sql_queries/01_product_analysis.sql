@@ -63,7 +63,7 @@ FROM shopify_trending_products_2026
 order by price_per_unit desc;
 
 --- Revenue Contribution by Product (Cumulative %) ---
-/*---USING SUBQUERY-----*/
+/*---USING SUBQUERY----*/
 SELECT Product_Name,
 revenue,
 ROUND(
@@ -78,7 +78,7 @@ FROM
 ) AS t
 order BY revenue desc;
 
-/*---USING CTE ---*/
+--- USING CTE ---
 WITH revenue_data AS (
     SELECT 
         product_name,
