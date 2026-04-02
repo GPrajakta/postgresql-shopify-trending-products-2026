@@ -6,10 +6,10 @@ The goal is to identify:
 
 * Top-performing product categories
 * High-revenue products
-Trending products with growth potential
-Best-performing price ranges
-Trend source effectiveness
-Revenue contribution by category
+* Trending products with growth potential
+* Best-performing price ranges
+* Trend source effectiveness
+* Revenue contribution by category
 
 ## Tools Used
 - PostgreSQL
@@ -28,6 +28,16 @@ The dataset contains product level trend information including:
 - Trend Score
 - Price Range
 - Trend Source
+
+## This project demonstrates SQL skills including:
+•	Filtering
+•	Aggregations
+•	GROUP BY
+•	HAVING
+•	CASE statements
+•	Window functions
+•	Subqueries
+•	CTEs
 
 ## Analysis Performed
 1. Top trending products by trend score
