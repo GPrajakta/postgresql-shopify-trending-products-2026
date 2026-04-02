@@ -48,12 +48,12 @@ The dataset contains product level trend information including:
 * GROUP BY
 * HAVING
 *LIMIT
-## Intermediate SQL
+### Intermediate SQL
 * CASE WHEN
 * Subqueries
 * Common Table Expressions (CTEs)
 * Aggregate Functions
-## Advanced SQL
+### Advanced SQL
 * Window Functions
 * RANK()
 * ROW_NUMBER()
