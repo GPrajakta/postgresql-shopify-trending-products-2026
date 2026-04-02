@@ -28,6 +28,7 @@ The dataset contains product level trend information including:
 - Trend Score
 - Price Range
 - Trend Source
+- Notes
 
 ## This project demonstrates SQL skills including:
 * Filtering
@@ -38,6 +39,18 @@ The dataset contains product level trend information including:
 *	Window functions
 *	Subqueries
 *	CTEs
+
+Business Questions
+The project answers the following business questions:
+1.	Which products generate the highest revenue?
+2.	Which categories contribute the most to total revenue?
+3.	Which price ranges perform best?
+4.	Which products have high trend scores but low revenue?
+5.	Which trend sources are most effective?
+6.	Which products generate the highest revenue per unit sold?
+7.	Is there a relationship between trend score and revenue?
+8.	Which products are above average performers?
+
 
 ## Analysis Performed
 1. Top trending products by trend score
