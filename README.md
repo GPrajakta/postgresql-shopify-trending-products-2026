@@ -4,8 +4,8 @@
 This project analyzes trending Shopify products using SQL. 
 The goal is to identify:
 
-Top-performing product categories
-High-revenue products
+* Top-performing product categories
+* High-revenue products
 Trending products with growth potential
 Best-performing price ranges
 Trend source effectiveness
