@@ -64,10 +64,10 @@ The dataset contains product level trend information including:
 * Z-Score Analysis
 * Pareto Analysis
 ## Example Analyses
-** 1. Category Revenue Contribution\
+__ 1. Category Revenue Contribution \
   This analysis identifies which categories generate the highest share of revenue.
 
-** 2. Trend Score Segmentation\
+** 2. Trend Score Segmentation \
    Products are classified as:
   * Highly Trending
   * Moderately Trending
