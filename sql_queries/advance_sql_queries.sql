@@ -30,7 +30,7 @@ Estimated_Revenue_in_2025_USD,
 FROM shopify_trending_products_2026
 order by z_score DESC;
 
-/* Bucket Products by Performance */
+--- Bucket Products by Performance ---
 
 SELECT product_name,
 Estimated_Revenue_in_2025_USD,
