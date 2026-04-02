@@ -30,14 +30,14 @@ The dataset contains product level trend information including:
 - Trend Source
 
 ## This project demonstrates SQL skills including:
-•	Filtering
-•	Aggregations
-•	GROUP BY
-•	HAVING
-•	CASE statements
-•	Window functions
-•	Subqueries
-•	CTEs
+* Filtering
+*	Aggregations
+*	GROUP BY
+*	HAVING
+*	CASE statements
+*	Window functions
+*	Subqueries
+*	CTEs
 
 ## Analysis Performed
 1. Top trending products by trend score
