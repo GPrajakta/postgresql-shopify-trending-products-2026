@@ -40,8 +40,8 @@ The dataset contains product level trend information including:
 *	Subqueries
 *	CTEs
 
-Business Questions
-The project answers the following business questions:
+# Business Questions
+# The project answers the following business questions:
 1.	Which products generate the highest revenue?
 2.	Which categories contribute the most to total revenue?
 3.	Which price ranges perform best?
