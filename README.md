@@ -84,7 +84,7 @@ The dataset contains product level trend information including:
 
 ## Key Insights
 - Eco Friendly category generated the highest revenue
-- Products priced between $3.0-$4 sold the most units
+- Products priced between $3.0-$4 sold the most units which comes under food and beverage category
 - Top 10 products contribute a significant portion of total revenue
 
 ## Project Structure
