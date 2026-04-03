@@ -87,10 +87,17 @@ The dataset contains product level trend information including:
 - Products priced between $3.0-$4 sold the most units which comes under food and beverage category
 - Top 10 products contribute a significant portion of total revenue
 
-## Project Structure\
-shopify-trending-products-2026
-dataset 
-  __ shopify_products.csv\  
- ---
+## Project Structure
+dataset/
+shopify_products.csv
+sql_queries/
+- 01_product_trends.sql
+- 02_category_analysis.sql
+- 03_price_analysis.sql
+- advance_queries.sql
+
+results/
+query_output.png
+
 
 
