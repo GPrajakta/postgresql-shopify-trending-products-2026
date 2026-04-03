@@ -86,7 +86,6 @@ WITH revenue_data AS (
     FROM shopify_trending_products_2026
     GROUP BY product_name
 ),
-
 calc AS (
     SELECT 
         product_name,
@@ -95,7 +94,6 @@ calc AS (
         SUM(revenue) OVER () AS total_sum
     FROM revenue_data
 )
-
 SELECT 
     product_name,
     revenue,
