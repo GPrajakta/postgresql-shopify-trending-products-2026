@@ -89,14 +89,6 @@ The dataset contains product level trend information including:
 
 ## Project Structure
 shopify-trending-products-2026/
-data/
+dataset /
 ── shopify_products.csv /
-│
-├── sql_queries/
-│   ├── 01_product_analysis.sql / 
-│   ├── 02_category_analysis.sql /
-│   ├── 03_price_analysis.sql /
-│   ├── 04_advanced_analysis.sql /
-│  
-│
-└── README.md
+
