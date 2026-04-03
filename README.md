@@ -47,7 +47,7 @@ The dataset contains product level trend information including:
 * ORDER BY
 * GROUP BY
 * HAVING
-*LIMIT
+* LIMIT
 ### Intermediate SQL
 * CASE WHEN
 * Subqueries
