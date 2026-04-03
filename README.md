@@ -88,7 +88,9 @@ The dataset contains product level trend information including:
 - Top 10 products contribute a significant portion of total revenue
 
 ## Project Structure
-shopify-trending-products-2026/
-dataset /
-── shopify_products.csv /
+shopify-trending-products-2026
+dataset 
+  __ shopify_products.csv\  
+ ---
+
 
